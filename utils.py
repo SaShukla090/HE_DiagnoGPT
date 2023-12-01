@@ -2,10 +2,16 @@ from sentence_transformers import SentenceTransformer
 import pinecone
 import openai
 import streamlit as st
-openai.api_key = "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"
+import os
+
+PINECONE_API_KEY = os.environ["PINECONE_API_KEY"]
+HF_API_KEY = os.environ["HF_API_KEY"]
+OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
+
+openai.api_key = OPENAI_API_KEY
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
-pinecone.init(api_key='5ff4706c-1800-4cf9-8bf1-cab8c431630d', environment='gcp-starter')
+pinecone.init(api_key=PINECONE_API_KEY, environment='gcp-starter')
 index = pinecone.Index('bp')
 
 def find_match(input):

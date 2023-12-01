@@ -13,7 +13,13 @@ from utils import *
 import os
 
 
-os.environ["OPENAI_API_KEY"] = "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"
+import os
+
+PINECONE_API_KEY = os.environ["PINECONE_API_KEY"]
+HF_API_KEY = os.environ["HF_API_KEY"]
+OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
+
+
 
 st.subheader("Chatbot with Langchain, ChatGPT, Pinecone, and Streamlit")
 
@@ -27,7 +33,7 @@ if 'responses' not in st.session_state:
 if 'requests' not in st.session_state:
     st.session_state['requests'] = []
 
-llm = ChatOpenAI(model_name="gpt-3.5-turbo", openai_api_key="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")
+llm = ChatOpenAI(model_name="gpt-3.5-turbo", openai_api_key= OPENAI_API_KEY)
 
 if 'buffer_memory' not in st.session_state:
             st.session_state.buffer_memory=ConversationBufferWindowMemory(k=3,return_messages=True)
