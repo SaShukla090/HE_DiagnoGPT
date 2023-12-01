@@ -21,8 +21,15 @@ OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
 
 
 
-st.subheader("Chatbot with Langchain, ChatGPT, Pinecone, and Streamlit")
+st.subheader("Reseacher Assistant GPT for Diagnosis of Hashimoto Encephalopathy")
+markdown_content = """
+**Developed By:** Shivam Shukla (19301) and Shraddha Agarwal (19294)  
+**Guide:** Dr. Parthiban Srinivasan  
+**Organization:** Indian Institute of Science Education and Research Bhopal
+"""
 
+# Use st.markdown to display the content
+st.markdown(markdown_content)
 
 available_models = ["gpt-3.5-turbo", "text-davinci-003", "gpt-3.5-large"]  # Add other models as needed
 selected_model = st.selectbox("Select the model to use:", available_models)
@@ -79,5 +86,6 @@ with response_container:
             message(st.session_state['responses'][i],key=str(i))
             if i < len(st.session_state['requests']):
                 message(st.session_state["requests"][i], is_user=True,key=str(i)+ '_user')
+
 
           
