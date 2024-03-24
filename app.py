@@ -23,9 +23,10 @@ OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
 
 st.subheader("Reseacher Assistant GPT for Diagnosis of Hashimoto Encephalopathy")
 markdown_content = """
-**Developed By:** Shivam Shukla (19301) and Shraddha Agarwal (19294)  
-**Guide:** Dr. Parthiban Srinivasan  
-**Organization:** Indian Institute of Science Education and Research Bhopal
+**Developed By:** Shraddha Agarwal (19294) and Shivam Shukla (19301)  
+[GitHub 1](https://github.com/shraddhaagarwal10)
+[GitHub 1](https://github.com/SaShukla090/)
+[Developer's sales](https://www.upwork.com/freelancers/~01b409045f39409a22)
 """
 
 # Use st.markdown to display the content
